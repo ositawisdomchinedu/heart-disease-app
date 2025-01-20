@@ -74,11 +74,23 @@ if st.sidebar.button("Predict"):
     else:
         st.success("The model predicts that the patient does not have heart disease.")
 
+    # Health risk assessment based on input data
+    st.subheader("Health Risk Assessment")
+    st.write("Based on the provided data, here are some health recommendations:")
+
+    if chol > 200:
+        st.warning("High cholesterol levels. Consider a balanced diet and regular exercise.")
+    if trestbps > 120:
+       st.warning("High resting blood pressure. Monitor your blood pressure regularly and consult your doctor.") 
+    if age > 45 and prediction[0] == 1: 
+        st.warning("Increased risk of heart disease due to age. Regular check-ups and a healthy lifestyle are advised.")
+    if thalach < 100:
+        st.warning("Low maximum heart rate achieved. Consider cardiovascular exercises to improve heart health.")
+
 # Display input data
 st.subheader("Patient Data")
 st.write(input_data)
 
-# Example chart
-fig, ax = plt.subplots()
-ax.hist(input_data['age'], bins=10 )
-st.pyplot(fig)
+# Display input data statistics
+st.subheader("Data Summary")
+st.write(input_data.describe().T)
