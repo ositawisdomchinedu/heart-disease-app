@@ -30,11 +30,11 @@ st.markdown(
 
 # Streamlit app
 st.title("Heart Disease Prediction")
-st.image("heart.jpeg", width=200)
+st.image("heart.jpeg", width=300)
 
 # Sidebar for user inputs
 st.sidebar.header("Patient Data")
-st.sidebar.image("heart.jpeg", width=200)
+st.sidebar.image("heart.jpeg", width=300)
 age = st.sidebar.number_input("Age", min_value=1, max_value=120, value=25, help="Enter the patient's age.")
 sex = st.sidebar.selectbox("Sex", options=[0, 1], format_func=lambda x: "Female" if x == 0 else "Male", help="Select the patient's sex.")
 cp = st.sidebar.selectbox("Chest Pain Type", options=[0, 1, 2, 3], help="Type of chest pain experienced.")
@@ -77,7 +77,6 @@ if st.sidebar.button("Predict"):
     # Health risk assessment based on input data
     st.subheader("Health Risk Assessment")
     st.write("Based on the provided data, here are some health recommendations:")
-
     if chol > 200:
         st.warning("High cholesterol levels. Consider a balanced diet and regular exercise.")
     if trestbps > 120:
