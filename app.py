@@ -30,7 +30,7 @@ st.markdown(
 
 # Streamlit app
 st.title("Heart Disease Prediction")
-st.image("C:/Users/Hp/Desktop/new_projects/heart.jpeg", width=100)
+st.image("heart.jpeg", width=100)
 
 # Sidebar for user inputs
 st.sidebar.header("Patient Data")
