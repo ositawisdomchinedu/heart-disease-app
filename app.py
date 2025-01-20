@@ -30,11 +30,11 @@ st.markdown(
 
 # Streamlit app
 st.title("Heart Disease Prediction")
-st.image("heart.jpeg", width=100)
+st.image("heart.jpeg", width=200)
 
 # Sidebar for user inputs
 st.sidebar.header("Patient Data")
-st.sidebar.image("C:/Users/Hp/Desktop/new_projects/heart.jpeg", width=100)
+st.sidebar.image("heart.jpeg", width=200)
 age = st.sidebar.number_input("Age", min_value=1, max_value=120, value=25, help="Enter the patient's age.")
 sex = st.sidebar.selectbox("Sex", options=[0, 1], format_func=lambda x: "Female" if x == 0 else "Male", help="Select the patient's sex.")
 cp = st.sidebar.selectbox("Chest Pain Type", options=[0, 1, 2, 3], help="Type of chest pain experienced.")
